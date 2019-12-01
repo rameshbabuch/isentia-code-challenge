@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BackendApiService} from "../../shared/services/backend-api.service";
 
 @Component({
     selector: 'app-dashboard',
@@ -6,16 +7,35 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-    public alerts: Array<any> = [];
-    public sliders: Array<any> = [];
+    public feeds: any = []
+    public view: string = 'grid'
 
-    constructor() {
+    constructor(private backendAPI: BackendApiService) {
     }
 
-    ngOnInit() {}
-
-    public closeAlert(alert: any) {
-        const index: number = this.alerts.indexOf(alert);
-        this.alerts.splice(index, 1);
+    /**
+     * Show fetched feeds
+     * @param feeds
+     * @param view
+     */
+    public showFeeds(feeds: any, view: string = 'grid') {
+        this.feeds = feeds
+        this.view = view
     }
+
+    /**
+     * Fetch public feeds
+     */
+    public getFeeds() {
+        this.backendAPI.getFlickrPublicFeeds()
+            .subscribe((response: any) => {
+                console.log('feeds', response)
+                this.showFeeds(response.data)
+            })
+    }
+
+    ngOnInit() {
+        this.getFeeds()
+    }
+
 }

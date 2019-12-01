@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
     selector: 'app-tables',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./tables.component.scss'],
 })
 export class TablesComponent implements OnInit {
-    constructor() {}
+    @Input() feeds: Array<any>;
 
-    ngOnInit() {}
+    ngOnInit() {
+    }
 }
