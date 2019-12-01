@@ -1,10 +1,17 @@
-<div>
+<div class="grid-view">
 
     <div class="row">
-        <div *ngFor="let feedItem of feeds.items" class="col-xl-6 text-xs-center">
-            <div class="card mb-3">
+        <div *ngFor="let feedItem of feeds.items" class="col-xl-3 card-block">
+            <div class="card">
                 <div class="card-body">
-                    {{ feedItem.title }}
+                    <div [innerHTML]="feedItem.description">
+                    </div>
+                    <hr/>
+                    <p>
+                        <span *ngFor="let tag of getTags(feedItem.tags)" class="badge badge-secondary">
+                            {{ tag }}
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>

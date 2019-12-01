@@ -1,19 +1,28 @@
+<div *ngIf="loader" class="loading"></div>
 <div>
     <h2 class="text-muted">Feeds </h2>
     <div class="row">
         <div class="col-lg-12">
-            <form class="form-inline col-xl-12 my-lg-0">
-                <input class="form-control col-xl-12" type="text" placeholder="Search Feed">
+            <form class="form-inline my-lg-0"
+                  (ngSubmit)="searchTag(searchForm.value)"
+                  [formGroup]="searchForm">
+                <input class="form-control col-xl-12"
+                       type="text"
+                       id="text"
+                       formControlName="text"
+                       placeholder="Search by tag: type here and enter">
+
             </form>
+            <p>
+                Example (single tag): nature
+            </p>
+            <p>
+                Multiple Tags: nature,nikon
+            </p>
         </div>
     </div>
-    <hr>
+    <br/>
 
-    <div *ngIf="view==='grid'">
-        <app-grid [feeds]="feeds"></app-grid>
-    </div>
-    <div *ngIf="view==='list'">
-        <!--<app-tables [feeds]="feeds"></app-tables>-->
-    </div>
+    <app-grid [feeds]="feeds"></app-grid>
 
 </div>

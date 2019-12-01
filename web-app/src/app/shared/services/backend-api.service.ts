@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {environment} from "../../../environments/environment";
+import {environment} from '../../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -12,16 +12,19 @@ import {environment} from "../../../environments/environment";
 export class BackendApiService {
     private apiUrl: string;
 
+    /**
+     * Constructor
+     * @param http http client
+     */
     constructor(private http: HttpClient) {
         this.apiUrl = environment.apiUrl;
     }
 
     /**
      * Fetch flicker public feeds
-     * @param params
+     * @param params query params string
      */
     getFlickrPublicFeeds(params = '') {
-        let url = `${this.apiUrl}/feeds?${params}`;
-        return this.http.get(url);
+        return this.http.get(`${this.apiUrl}/feeds?${params}`);
     }
 }
