@@ -1,6 +1,4 @@
 import express from 'express'
-
-import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import createError from 'http-errors'
@@ -8,6 +6,7 @@ import AppRoutes from './AppRoutes'
 
 const app = express()
 
+// attach common services
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
