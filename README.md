@@ -1,6 +1,8 @@
 # isentia-code-challenge
 Isentia Code Challenge
 
+Demo hosted on ec2 instance: http://13.232.232.52/dashboard
+
 ## Features:
 * Flickr public feed
 * Search feeds by tags
