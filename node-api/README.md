@@ -4,7 +4,7 @@ This is simple Flickr public feed reader API services.
 
 ### Introduction
 
-It includes following features:
+It includes following libraries:
 
 *   Node - v10.x 
 *   express.js - 4.16.1
@@ -44,7 +44,7 @@ Run `ng test` to execute the unit tests via [Mocha](https://mochajs.org/).
 
 ### Running lint 
 
-Run `npm runt lint` to execute the es-lint.
+Run `npm run lint` to execute the es-lint.
 
 ### API's
 

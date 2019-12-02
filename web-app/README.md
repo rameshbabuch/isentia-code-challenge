@@ -4,13 +4,12 @@ This is simple Flickr public feed reader dashboard developed for Isentia Code Ch
 
 ### Introduction
 
-It includes following features:
+It includes following libraries:
 
 *   Developed using boostrap-v4.0.0
 *   angular-v8.0.0
 *   angular/cli-v8.0.0
 *   [ng-bootstrap-v4.0.0](https://github.com/ng-bootstrap/)
-*   [ngx-translate-v11.0.0](https://github.com/ngx-translate)
 
 ### How to start
 
@@ -45,10 +44,11 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ### Running lint 
 
-Run `npm runt lint` to execute the ts-lint.
+Run `npm run lint` to execute the ts-lint.
 
 ### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
 Before running the tests make sure you are serving the app via `ng serve`.
 
