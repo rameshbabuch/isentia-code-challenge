@@ -23,6 +23,9 @@
     </div>
     <br/>
 
+    <h3 class="alert-danger text-center" *ngIf="errorMessage.length">
+        {{ errorMessage }}
+    </h3>
     <app-grid [feeds]="feeds"></app-grid>
 
 </div>

@@ -10,7 +10,7 @@ import {environment} from '../../../environments/environment';
  * Common backend service class
  */
 export class BackendApiService {
-    private apiUrl: string;
+    public apiUrl: string;
 
     /**
      * Constructor
